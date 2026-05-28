@@ -19,5 +19,5 @@ jobs:
       - run: flutter build ipa --release --no-codesign
       - uses: actions/upload-artifact@v4
         with:
-          name: bluebird-ipa
-          path: build/**/*.ipa
+          name: bluebird-build-output
+          path: bluebird_ios/build/
