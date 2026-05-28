@@ -11,25 +11,20 @@ fn greet(name: &str) -> String {
 }
 
 async fn start_ws_server() {
-    let addr = "127.0.0.1:8080";
+    let addr = "0.0.0.0:8080";
     let listener = TcpListener::bind(addr).await.expect("Failed to bind");
-    
-    // Register mDNS service
-    let mdns = ServiceDaemon::new().expect("Failed to create mdns daemon");
-    let service_info = ServiceInfo::new(
-        "_bluebird._tcp.local.",
-        "BluebirdWindows",
-        "bluebird.local.",
-        "127.0.0.1",
-        8080,
-        None,
-    ).unwrap();
-    mdns.register(service_info).expect("Failed to register mDNS");
+    println!("Server listening on: {}", addr);
 
     while let Ok((stream, _)) = listener.accept().await {
+        println!("New connection attempt from: {:?}", stream.peer_addr());
         tokio::spawn(async move {
-            let ws_stream = accept_async(stream).await.expect("Error during handshake");
-            // Handle WebSocket connection here according to schema
+            match accept_async(stream).await {
+                Ok(ws_stream) => {
+                    println!("WebSocket handshake successful!");
+                    // Handle WebSocket messages here
+                }
+                Err(e) => println!("Error during handshake: {}", e),
+            }
         });
     }
 }
