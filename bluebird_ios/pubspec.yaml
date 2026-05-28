@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   web_socket_channel: ^3.0.3
   network_info_plus: ^8.1.0
-  connectivity_plus: ^5.7.0
+  connectivity_plus: ^6.0.0
 
 dev_dependencies:
   flutter_test:
