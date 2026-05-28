@@ -1,0 +1,15 @@
+# Tauri
+/windows-app/bluebird-windows/src-tauri/target/
+/windows-app/bluebird-windows/node_modules/
+
+# Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.framework
+ios/Flutter/flutter_assets
+ios/Flutter/Flutter.framework
+*.lock
