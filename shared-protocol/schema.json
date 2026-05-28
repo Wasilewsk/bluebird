@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "messages": {
+    "discovery": {
+      "type": "discovery",
+      "payload": {
+        "device_name": "string",
+        "protocol_version": "string"
+      }
+    },
+    "file_transfer": {
+      "type": "file_transfer",
+      "payload": {
+        "filename": "string",
+        "file_size": "number",
+        "hash": "string"
+      }
+    },
+    "status": {
+      "type": "status",
+      "payload": {
+        "code": "number",
+        "message": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluebird Desktop</title>
+    <style>
+      body { font-family: sans-serif; padding: 20px; }
+      .status { font-weight: bold; margin-bottom: 20px; }
+    </style>
+  </head>
+  <body>
+    <h1>Bluebird Desktop</h1>
+    <div id="status" class="status" role="status">Status: Waiting for connection...</div>
+    <div id="controls">
+      <p>Your PC is discoverable on this network.</p>
+    </div>
+    <script>
+      // We will add the WebSocket server listener here
+      document.getElementById('status').innerText = "Status: Server listening on port 8080";
+    </script>
+  </body>
+</html>
